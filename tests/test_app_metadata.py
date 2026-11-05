@@ -62,7 +62,7 @@ def test_app_metadata() -> None:
     assert config["schema"]["mqtt_host"] == "str"
     assert config["schema"]["mqtt_port"] == "port"
     assert "mqtt:need" in config["services"]
-    assert config["image"] == "ghcr.io/omgapuppy/esbn-to-mqtt"
+    assert config["image"] == "ghcr.io/hognefossland/esbn-to-mqtt"
     assert config["options"]["log_level"] == "info"
     assert config["schema"]["log_level"] == "list(trace|debug|info|notice|warning|error|fatal)"
 
