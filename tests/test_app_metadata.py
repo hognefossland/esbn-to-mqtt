@@ -40,7 +40,7 @@ def test_app_metadata() -> None:
     config = load_yaml(ROOT / "esbn-to-mqtt" / "config.yaml")
 
     assert config["name"] == "esbn-to-mqtt"
-    assert config["version"] == "0.4.6.post1"
+    assert config["version"] == "0.4.6.post2"
     assert config["slug"] == "esbn_to_mqtt"
     assert config["stage"] == "stable"
     assert config["options"]["mqtt_host"] == "core-mosquitto"
@@ -62,7 +62,7 @@ def test_app_metadata() -> None:
     assert config["schema"]["mqtt_host"] == "str"
     assert config["schema"]["mqtt_port"] == "port"
     assert "mqtt:need" in config["services"]
-    assert config["image"] == "ghcr.io/omgapuppy/esbn-to-mqtt"
+    assert config["image"] == "ghcr.io/hognefossland/esbn-to-mqtt"
     assert config["options"]["log_level"] == "info"
     assert config["schema"]["log_level"] == "list(trace|debug|info|notice|warning|error|fatal)"
 
@@ -73,7 +73,7 @@ def test_release_version_metadata_stays_in_sync() -> None:
         project = tomllib.load(handle)["project"]
     dockerfile = (ROOT / "esbn-to-mqtt" / "Dockerfile").read_text(encoding="utf-8")
 
-    assert config["version"] == "0.4.6.post1"
+    assert config["version"] == "0.4.6.post2"
     assert project["version"] == config["version"]
     assert __version__ == config["version"]
     assert f"ARG BUILD_VERSION={config['version']}" in dockerfile
