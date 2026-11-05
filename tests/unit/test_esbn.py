@@ -160,7 +160,7 @@ def test_download_30_min_kwh_hdf_performs_live_login_and_download_flow(
             assert request.method == "GET"
             return httpx.Response(200, json={"token": "xsrf-token"})
 
-        if url == "https://myaccount.esbnetworks.ie/DataHub/DownloadHdfPeriodic":
+        if url == "https://myaccount.esbnetworks.ie/energymanagement/api/consumption/DownloadHdfPeriodic":
             assert request.method == "POST"
             assert request.headers["x-xsrf-token"] == "xsrf-token"
             assert request.headers["x-returnurl"] == (
@@ -201,7 +201,7 @@ def test_download_30_min_kwh_hdf_performs_live_login_and_download_flow(
         "https://myaccount.esbnetworks.ie/",
         "https://myaccount.esbnetworks.ie/Api/HistoricConsumption",
         "https://myaccount.esbnetworks.ie/af/t",
-        "https://myaccount.esbnetworks.ie/DataHub/DownloadHdfPeriodic",
+        "https://myaccount.esbnetworks.ie/energymanagement/api/consumption/DownloadHdfPeriodic",
     ]
 
 
@@ -224,7 +224,7 @@ def test_download_30_min_kwh_hdf_uses_persisted_session_cookie(
             return _html_response("<html><body>historic</body></html>")
         if url == "https://myaccount.esbnetworks.ie/af/t":
             return httpx.Response(200, json={"token": "xsrf-token"})
-        if url == "https://myaccount.esbnetworks.ie/DataHub/DownloadHdfPeriodic":
+        if url == "https://myaccount.esbnetworks.ie/energymanagement/api/consumption/DownloadHdfPeriodic":
             return _csv_response("Read Date and End Time,Import kWh\n2026-05-12 00:30,0.123\n")
         raise AssertionError(f"unexpected request: {request.method} {url}")
 
@@ -245,7 +245,7 @@ def test_download_30_min_kwh_hdf_uses_persisted_session_cookie(
         "https://myaccount.esbnetworks.ie/",
         "https://myaccount.esbnetworks.ie/Api/HistoricConsumption",
         "https://myaccount.esbnetworks.ie/af/t",
-        "https://myaccount.esbnetworks.ie/DataHub/DownloadHdfPeriodic",
+        "https://myaccount.esbnetworks.ie/energymanagement/api/consumption/DownloadHdfPeriodic",
     ]
 
 
@@ -366,7 +366,7 @@ def test_download_30_min_kwh_hdf_solves_recaptcha_challenge_before_confirming_si
             return _html_response("<html><body>historic</body></html>")
         if url == "https://myaccount.esbnetworks.ie/af/t":
             return httpx.Response(200, json={"token": "xsrf-token"})
-        if url == "https://myaccount.esbnetworks.ie/DataHub/DownloadHdfPeriodic":
+        if url == "https://myaccount.esbnetworks.ie/energymanagement/api/consumption/DownloadHdfPeriodic":
             return _csv_response("Read Date and End Time,Import kWh\n2026-05-12 00:30,0.123\n")
         raise AssertionError(f"unexpected request: {request.method} {url}")
 
