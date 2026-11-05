@@ -1,4 +1,4 @@
-# esbn-to-mqtt
+# esbn-to-mqtt (Personal fork - do not use)
 
 `esbn-to-mqtt` is an unofficial Home Assistant app that turns ESB Networks smart meter HDF exports into MQTT sensors for Home Assistant.
 
