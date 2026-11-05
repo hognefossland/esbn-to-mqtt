@@ -20,7 +20,7 @@ jobs:
 
     env:
       REGISTRY: ghcr.io
-      IMAGE_OWNER: omgapuppy
+      IMAGE_OWNER: hognefossland
       IMAGE_NAME: esbn-to-mqtt
 
     steps:
