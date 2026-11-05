@@ -5,7 +5,7 @@ ARG BUILD_VERSION=0.4.6.post1
 ARG BUILD_ARCH=amd64
 
 LABEL \
-  io.hass.name="esbn-to-mqtt" \
+  io.hass.name="esbn-to-mqtt-hf" \
   io.hass.description="Publish ESB Networks smart meter HDF data to MQTT" \
   io.hass.arch="${BUILD_ARCH}" \
   io.hass.type="app" \
