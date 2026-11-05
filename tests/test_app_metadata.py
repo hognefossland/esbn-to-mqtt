@@ -33,7 +33,7 @@ def test_repository_metadata() -> None:
     repository = load_yaml(ROOT / "repository.yaml")
 
     assert repository["name"] == "esbn-to-mqtt Home Assistant app repository"
-    assert repository["url"] == "https://github.com/omgapuppy/esbn-to-mqtt"
+    assert repository["url"] == "https://github.com/hognefossland/esbn-to-mqtt"
 
 
 def test_app_metadata() -> None:
