@@ -1,4 +1,4 @@
-name: esbn-to-mqtt-hf
+name: esbn-to-mqtt
 version: "0.4.6.post1"
 slug: esbn_to_mqtt
 description: Publish ESB Networks smart meter HDF data to Home Assistant MQTT sensors
