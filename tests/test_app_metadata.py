@@ -33,14 +33,14 @@ def test_repository_metadata() -> None:
     repository = load_yaml(ROOT / "repository.yaml")
 
     assert repository["name"] == "esbn-to-mqtt Home Assistant app repository"
-    assert repository["url"] == "https://github.com/omgapuppy/esbn-to-mqtt"
+    assert repository["url"] == "https://github.com/hognefossland/esbn-to-mqtt"
 
 
 def test_app_metadata() -> None:
     config = load_yaml(ROOT / "esbn-to-mqtt" / "config.yaml")
 
     assert config["name"] == "esbn-to-mqtt"
-    assert config["version"] == "0.4.6"
+    assert config["version"] == "0.4.6.post1"
     assert config["slug"] == "esbn_to_mqtt"
     assert config["stage"] == "stable"
     assert config["options"]["mqtt_host"] == "core-mosquitto"
@@ -73,7 +73,7 @@ def test_release_version_metadata_stays_in_sync() -> None:
         project = tomllib.load(handle)["project"]
     dockerfile = (ROOT / "esbn-to-mqtt" / "Dockerfile").read_text(encoding="utf-8")
 
-    assert config["version"] == "0.4.6"
+    assert config["version"] == "0.4.6.post1"
     assert project["version"] == config["version"]
     assert __version__ == config["version"]
     assert f"ARG BUILD_VERSION={config['version']}" in dockerfile
