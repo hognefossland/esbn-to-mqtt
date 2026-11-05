@@ -450,7 +450,7 @@ def test_download_30_min_kwh_hdf_rejects_non_csv_download() -> None:
             return _html_response("<html><body>historic</body></html>")
         if url == "https://myaccount.esbnetworks.ie/af/t":
             return httpx.Response(200, json={"token": "xsrf-token"})
-        if url == "https://myaccount.esbnetworks.ie/DataHub/DownloadHdfPeriodic":
+        if url == "https://myaccount.esbnetworks.ie/energymanagement/api/consumption/DownloadHdfPeriodic":
             return _html_response("<html><body>export unavailable</body></html>")
         raise AssertionError(f"unexpected request: {request.method} {url}")
 
